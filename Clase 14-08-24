@@ -1,0 +1,20 @@
+function iniciarReloj() {
+    function mostrarHora() {
+        const ahora = new Date();
+        const hora = ahora.toLocaleTimeString();
+        window.alert(hora);
+    }
+
+    // Mostrar la hora inmediatamente
+    mostrarHora();
+
+    const segundosRestantes = 60 - new Date().getSeconds();
+    const milisegundosRestantes = segundosRestantes * 1000;
+
+    window.setTimeout(function() {
+        mostrarHora();
+
+        window.setInterval(mostrarHora, 60000);
+    }, milisegundosRestantes);
+}
+iniciarReloj()
